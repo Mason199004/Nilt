@@ -4,9 +4,7 @@
  
  
 /* This tutorial will only work for the 32-bit ix86 targets. */
-#if !defined(__i386__)
-#error "This tutorial needs to be compiled with a ix86-elf compiler"
-#endif
+
  
 /* Hardware text mode color constants. */
 enum vga_color {
@@ -114,8 +112,12 @@ void kernel_main(void)
 	/* Initialize terminal interface */
 	terminal_initialize();
  
-	/* Newline support is left as an exercise. */
+
 	terminal_writestring("Hello, kernel World!\n");
-	terminal_writestring("pog");
+	uint64_t t = 9223372036854775807;
+	if (t - 77 == 0x7FFFFFFFFFFFFFB2)
+	{
+		terminal_writestring("64 bit seems to be working");
+	}
 }
 
