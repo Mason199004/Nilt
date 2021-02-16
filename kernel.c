@@ -3,7 +3,7 @@
 #include <stdint.h>
  
  
-/* This tutorial will only work for the 32-bit ix86 targets. */
+
 
  
 /* Hardware text mode color constants. */
